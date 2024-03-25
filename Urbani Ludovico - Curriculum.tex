@@ -1,17 +1,71 @@
 \documentclass[
-	a4paper,
-	11pt
-	oneside
+    a4paper,
+    oneside,
+    10pt
 ]{article}
 
+\usepackage{lmodern}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[english, italian]{babel}
 
 \usepackage[
-	margin = 1in
+	bindingoffset = 0.2in,
+	left = 0.5in,
+	right = 0.5in,
+	top = 0.5in,
+	bottom = 0.5in,
+	footskip = 0.25in
 ]{geometry}
+\usepackage{courier}
+
+\usepackage{fontawesome5}
+\usepackage{makecell}
+\usepackage{tikz}
+\usepackage{xcolor}
+
+\usepackage{graphicx}
+\graphicspath{ {./db/} }
+
 
 \begin{document}
-	aa
+
+    %==================== HEADER ====================%
+    \begin{tabular}{ @{} c m{12cm} @{} }
+		\begin{tikzpicture}[baseline=(ola.center),inner sep=0pt]
+			\clip (0,0)  circle (2cm) node (ola) {\includegraphics[height=4cm]{profile.jpg}};
+		\end{tikzpicture} & \shortstack[l]{
+			{\fontsize{25}{30}\selectfont\textbf{Urbani Ludovico}} \vspace{.3cm} \\
+            {\fontsize{15}{20}\selectfont\textbf{Developer}}
+		}
+	\end{tabular} \\
+	\begin{center}
+		\begin{tabular}{ m{15cm} }
+			\vspace{1cm} \\
+			\hline
+		\end{tabular}
+	\end{center}
+	\vspace{1cm}
+
+    %==================== PROFILE ====================%
+
+    \section{About}
+	\begin{center}
+		\renewcommand{\arraystretch}{1.25}
+		\begin{tabular}{ r@{\hspace{.5cm}} | @{\hspace{.5cm}}l }
+            Born & 2 June 2003 \\
+			Fiscal Code & RBNLVC03H02L424F \\
+			Living & Trieste (IT)
+		\end{tabular}
+	\end{center}
+
+    \subsection{Contacts}
+	\begin{center}
+		\renewcommand{\arraystretch}{1.25}
+		\begin{tabular}{ r@{\hspace{.5cm}} @{\hspace{.5cm}}l }
+            \faAt & lu.urbani@outlook.com \\
+			\faPhone & (+39) 331-2603770 \quad\faWhatsapp\;\faTelegram
+		\end{tabular}
+	\end{center}
+
 \end{document}
