@@ -19,8 +19,10 @@
 ]{geometry}
 \usepackage{courier}
 
+\usepackage{calc}
 \usepackage{fontawesome5}
 \usepackage{makecell}
+\usepackage{longtable}
 \usepackage{tikz}
 \usepackage{xcolor}
 
@@ -28,21 +30,22 @@
 \graphicspath{ {./db/} }
 
 \newenvironment{timeline}{%
-	\renewcommand{\arraystretch}{1.2}%
-	\begin{tabular}{c | c}%
+%	\renewcommand{\arraystretch}{1.2}%
+%	\def\arraystretch{1.5}%
+	\begin{longtable}{ c | c }%
 }{%
-	\end{tabular}%
+	\end{longtable}%
 }
 \newcommand{\tldate}[1]{%
-	\begin{minipage}{3cm}%
+	\begin{minipage}[t]{2cm}%
 		\begin{flushright}%
-			#1%
+			\vspace{10pt}#1%
 		\end{flushright}%
 	\end{minipage}%
 }
 \newcommand{\tlcontent}[1]{%
-	\begin{minipage}{\textwidth}%
-		#1%
+	\begin{minipage}[t]{\textwidth-2cm}%
+		\vspace{10pt}#1%
 	\end{minipage}%
 }
 
@@ -91,7 +94,7 @@
     \section{Education}
     
     \begin{timeline}
-    		\tldate{aaa} & \tlcontent{bbb} \\
+    		\input{|python3 api/education.py}
     \end{timeline}
 
 \end{document}

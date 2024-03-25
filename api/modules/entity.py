@@ -1,4 +1,4 @@
-from location import Location
+from .location import Location
 
 
 class Entity:
@@ -6,7 +6,7 @@ class Entity:
     location = None
 
     def __init__(self, cursor, id):
-        cursor.execute("SELECT * FROM ENTITIES WHERE ID = ? LIMIT 1", id)
+        cursor.execute("SELECT * FROM ENTITIES WHERE ID = ? LIMIT 1", (id, ))
         self.data = cursor.fetchone()
 
         if self.data and self.data["LOCATION"]:
@@ -25,3 +25,6 @@ class Entity:
                 out.append(loc)
 
         return None
+
+    def name(self):
+        return self.data["NAME"]

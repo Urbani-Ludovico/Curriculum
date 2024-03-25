@@ -2,7 +2,7 @@ class Location:
     data = None
 
     def __init__(self, cursor, id):
-        cursor.execute("SELECT * FROM LOCATIONS WHERE ID = ? LIMIT 1", id)
+        cursor.execute("SELECT * FROM LOCATIONS WHERE ID = ? LIMIT 1", (id, ))
         self.data = cursor.fetchone()
 
     def complete(self):

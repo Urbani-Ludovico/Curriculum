@@ -16,7 +16,7 @@ class Date(object):
         self.month = None
         self.day = None
 
-        if dt is True:
+        if dt.upper() == "ONGOING":
             self.ongoing = True
         elif isinstance(dt, str):
             s = dt.split("-")
@@ -94,7 +94,7 @@ def format_range(a, b, func = lambda x: x.strftime()):
         if a == b:
             return "In " + a
         else:
-            return a + "<br />" + b
+            return a + " \\\\ " + b
 
     if a:
         return func(a)
