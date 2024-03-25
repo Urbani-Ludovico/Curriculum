@@ -15,7 +15,7 @@ class Location:
         if self.data["ADDRESS"]:
             out.append(self.data["ADDRESS"])
         if self.data["CITY"] and (self.data["STATE"] or self.data["STATE_CODE"]):
-            out.append(self.data["CITY"] + " (" + (self.data["STATE_CODE"] if self.data["STATE"] is None else self.data["STATE"]) + ")")
+            out.append(self.data["CITY"] + " (" + (self.data["STATE_CODE"] if self.data["STATE_CODE"] is not None else self.data["STATE"]) + ")")
         elif self.data["CITY"]:
             out.append(self.data["CITY"])
         elif self.data["STATE"] or self.data["STATE_CODE"]:
@@ -34,7 +34,7 @@ class Location:
         if self.data["ADDRESS"]:
             out.append(self.data["ADDRESS"])
         if self.data["CITY"] and (self.data["STATE"] or self.data["STATE_CODE"]):
-            out.append(self.data["CITY"] + " (" + (self.data["STATE_CODE"] if self.data["STATE"] is None else self.data["STATE"]) + ")")
+            out.append(self.data["CITY"] + " (" + (self.data["STATE_CODE"] if self.data["STATE_CODE"] is not None else self.data["STATE"]) + ")")
         elif self.data["CITY"]:
             out.append(self.data["CITY"])
         elif self.data["STATE"] or self.data["STATE_CODE"]:
