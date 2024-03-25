@@ -27,6 +27,24 @@
 \usepackage{graphicx}
 \graphicspath{ {./db/} }
 
+\newenvironment{timeline}{%
+	\renewcommand{\arraystretch}{1.2}%
+	\begin{tabular}{c | c}%
+}{%
+	\end{tabular}%
+}
+\newcommand{\tldate}[1]{%
+	\begin{minipage}{3cm}%
+		\begin{flushright}%
+			#1%
+		\end{flushright}%
+	\end{minipage}%
+}
+\newcommand{\tlcontent}[1]{%
+	\begin{minipage}{\textwidth}%
+		#1%
+	\end{minipage}%
+}
 
 \begin{document}
 
@@ -67,5 +85,13 @@
 			\faPhone & (+39) 331-2603770 \quad\faWhatsapp\;\faTelegram
 		\end{tabular}
 	\end{center}
+	
+    %==================== EDUCATION ====================%
+    
+    \section{Education}
+    
+    \begin{timeline}
+    		\tldate{aaa} & \tlcontent{bbb} \\
+    \end{timeline}
 
 \end{document}
