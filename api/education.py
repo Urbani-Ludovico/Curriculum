@@ -17,9 +17,9 @@ def main():
     for row in rows:
         content = []
         if row["TYPE"]:
-            content.append(row["TYPE"])
+            content.append(f"\\ltsubtitle{{{row['TYPE']}}}")
         if row["TITLE"]:
-            content.append(row["TITLE"])
+            content.append(f"\\lttitle{{{row['TITLE']}}}")
 
         entity = None
         location = None
@@ -28,18 +28,18 @@ def main():
         if row["FROM_ENTITY"]:
             entity = Entity(cursor, row["FROM_ENTITY"])
             if location is not None:
-                content.append(f"From: {entity.name()}")
+                content.append(f"From: \\ltloc{{{entity.name()}}}")
             else:
-                content.append(f"From: {entity.complete()}")
+                content.append(f"From: \\ltloc{{{entity.complete()}}}")
         if location:
             if entity is None:
-                content.append(f"From: {location.complete()}")
+                content.append(f"\\ltloc{{{location.complete()}}}")
             else:
-                content.append(location.location())
+                content.append(f"\\ltloc{{{location.location()}}}")
 
         if row["RESULT"]:
             content.append(f"Result: {row['RESULT']}")
-        out.append(timeline(date = format_range(Date(row["START"]), Date(row["END"])), content = " \\\\ ".join(content)))
+        out.append(timeline(date = format_range(Date(row["START"]), Date(row["END"])), content = " \\\\[5pt] ".join(content)))
 
     print("\n".join(out))
 
