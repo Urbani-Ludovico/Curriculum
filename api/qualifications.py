@@ -18,7 +18,7 @@ def main():
                 date = Date(row["DATE"]).strftime(),
                 content = timeline_content(
                     row["TITLE"],
-                    location = Location(cursor, row["WHERE"]),
+                    location = Location(cursor, row["LOCATION"]),
                     entity = Entity(cursor, row["BY"]),
                     content = row["LATEX_DESCRIPTION"]
                 )

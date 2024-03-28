@@ -18,7 +18,7 @@ def main():
                 date = format_range(Date(row["START"]), Date(row["END"])),
                 content = timeline_content(
                     row["TITLE"],
-                    location = Location(cursor, row["WHERE"]),
+                    location = Location(cursor, row["LOCATION"]),
                     entity = Entity(cursor, row["WITH"]),
                     entity_prefix = "With",
                     content = row["LATEX_DESCRIPTION"]
