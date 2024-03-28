@@ -7,7 +7,7 @@
 \usepackage{lmodern}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage[english, italian]{babel}
+\usepackage[english]{babel}
 
 \usepackage[
 	bindingoffset = 0.2in,
@@ -25,6 +25,7 @@
 \usepackage{longtable}
 \usepackage{tikz}
 \usepackage{xcolor}
+\usepackage{hyperref}
 
 \usepackage{graphicx}
 \graphicspath{ {./db/} }
@@ -121,5 +122,14 @@
     \begin{timeline}
     		\input{|python3 api/honours.py}
     \end{timeline}
+    
+    \section{Memberships}
+    \begin{timeline}
+    		\input{|python3 api/memberships.py}
+    \end{timeline}
+    
+    \pagebreak
+	\pagenumbering{roman}
+    \tableofcontents
 
 \end{document}
