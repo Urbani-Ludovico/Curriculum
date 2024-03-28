@@ -7,12 +7,15 @@ def timeline(date = None, content = None):
     return f"\\tldate{{{date}}} & \\tlcontent{{{content}}} \\\\"
 
 
-def timeline_content(title, suptitle = None, location = None, entity = None, entity_prefix = "By", result = None, content = None):
+def timeline_content(title, suptitle = None, subtitle = None, location = None, entity = None, entity_prefix = "By", result = None, content = None):
     out = []
     if suptitle is not None:
         out.append(f"\\ltsubtitle{{{suptitle}}}")
 
     out.append(f"\\lttitle{{{title}}}")
+
+    if subtitle is not None:
+        out.append(f"\\ltsubtitle{{{subtitle}}}")
 
     if entity:
         if location and entity.data["LOCATION"] == location.data["ID"]:
