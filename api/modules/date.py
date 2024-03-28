@@ -16,6 +16,9 @@ class Date(object):
         self.month = None
         self.day = None
 
+        if dt is None:
+            return
+
         if dt.upper() == "ONGOING":
             self.ongoing = True
         elif isinstance(dt, str):
@@ -65,7 +68,7 @@ class Date(object):
                 s = month_string_extended(self.month) + " " + s
                 if self.day is not None:
                     s = str(self.day) + " " + s
-                    return s.strip()
+            return s.strip()
         return ""
 
     def strftime(self):
@@ -76,7 +79,7 @@ class Date(object):
             s = str(self.year)
             if self.month is not None:
                 s = month_string(self.month) + " " + s
-                return s.strip()
+            return s.strip()
 
         return ""
 
