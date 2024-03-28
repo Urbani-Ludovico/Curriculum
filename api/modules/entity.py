@@ -14,7 +14,7 @@ class Entity:
 
     def complete(self):
         if self.data is None:
-            return "--"
+            return None
 
         out = []
         if self.data["NAME"]:
@@ -24,7 +24,7 @@ class Entity:
             if loc:
                 out.append(loc)
 
-        return None
+        return ", ".join(out)
 
     def name(self):
         return self.data["NAME"]
