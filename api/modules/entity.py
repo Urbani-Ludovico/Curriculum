@@ -6,7 +6,7 @@ class Entity:
     location = None
 
     def __init__(self, cursor, id):
-        cursor.execute("SELECT * FROM ENTITIES WHERE ID = ? LIMIT 1", (id, ))
+        cursor.execute("SELECT * FROM ENTITIES WHERE ID = ? LIMIT 1", (id,))
         self.data = cursor.fetchone()
 
         if self.data and self.data["LOCATION"]:
@@ -28,3 +28,6 @@ class Entity:
 
     def name(self):
         return self.data["NAME"]
+
+    def __bool__(self):
+        return self.data is not None

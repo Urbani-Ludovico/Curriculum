@@ -44,3 +44,6 @@ class Location:
             return ", ".join(out)
 
         return None
+
+    def __bool__(self):
+        return self.data is not None
