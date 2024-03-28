@@ -5,6 +5,7 @@ from modules.db import get_cursor
 from modules.entity import Entity
 from modules.latex_blocks import timeline
 from modules.location import Location
+from modules import globals
 
 
 def main():
@@ -39,7 +40,7 @@ def main():
 
         if row["RESULT"]:
             content.append(f"Result: {row['RESULT']}")
-        out.append(timeline(date = format_range(Date(row["START"]), Date(row["END"])), content = " \\\\[5pt] ".join(content)))
+        out.append(timeline(date = format_range(Date(row["START"]), Date(row["END"])), content = f" \\\\[{globals.EVENT_LINE_SEP}] ".join(content)))
 
     print("\n".join(out))
 

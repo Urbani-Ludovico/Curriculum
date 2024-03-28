@@ -30,8 +30,6 @@
 \graphicspath{ {./db/} }
 
 \newenvironment{timeline}{%
-%	\renewcommand{\arraystretch}{1.2}%
-%	\def\arraystretch{1.5}%
 	\begin{longtable}{ c | c }%
 }{%
 	\end{longtable}%
@@ -48,8 +46,8 @@
 		\vspace{10pt}#1%
 	\end{minipage}%
 }
-\newcommand{\lttitle}[1]{\textbf{\Large #1}}
-\newcommand{\ltsubtitle}[1]{\textbf{\large #1}}
+\newcommand{\lttitle}[1]{\textbf{\Large #1}\vspace{2pt}}
+\newcommand{\ltsubtitle}[1]{\textbf{\large #1}\vspace{2pt}}
 \newcommand{\ltloc}[1]{\textit{#1}}
 
 \begin{document}
