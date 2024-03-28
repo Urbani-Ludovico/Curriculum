@@ -24,6 +24,7 @@
 \usepackage{makecell}
 \usepackage{longtable}
 \usepackage{tikz}
+\usetikzlibrary{calc} 
 \usepackage{xcolor}
 \usepackage{hyperref}
 
@@ -50,6 +51,15 @@
 \newcommand{\lttitle}[1]{\textbf{\Large #1}\vspace{2pt}}
 \newcommand{\ltsubtitle}[1]{\textbf{\large #1}\vspace{2pt}}
 \newcommand{\ltloc}[1]{\textit{#1}}
+
+\definecolor{progbarBgColor}{HTML}{101010}
+\definecolor{progbarColor}{HTML}{606060}
+\newcommand{\progress}[1]{%
+	\begin{tikzpicture}%
+		\fill[color=progbarColor] (0.0, 0.0) rectangle (#1*0.9*\linewidth, 0.15);
+		\draw[color=progbarBgColor] (0.0, 0.0) rectangle (0.9*\linewidth, 0.15);
+	\end{tikzpicture}%
+}
 
 \begin{document}
 
@@ -92,6 +102,32 @@
 	\end{center}
 	
     %==================== CONTENT ====================%
+    
+    \section{Skills}
+    
+    \subsection{Language Skills}
+    \begin{itemize}
+    		\item Italian \\ \progress{0.95}
+    		\item English \\ \progress{0.7}
+    		\item Latin \\ \progress{0.2}
+    \end{itemize}
+    
+    \subsection{Digital Skills}
+    
+    \subsubsection{Development}
+    \begin{itemize}
+    		\input{|python3 api/skills_development.py}
+    \end{itemize}
+    
+    \subsubsection{Operating Systems}
+    \begin{itemize}
+    		\input{|python3 api/skills_os.py}
+    \end{itemize}
+    
+    \subsubsection{Programming Languages}
+    \begin{itemize}
+    		\input{|python3 api/skills_programming_languages.py}
+    \end{itemize}
     
     \section{Education}
     \begin{timeline}
