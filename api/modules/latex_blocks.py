@@ -26,7 +26,7 @@ def timeline_content(title, suptitle = None, subtitle = None, location = None, e
         out.append(f"Location: \\ltloc{{{location.complete()}}}")
 
     if result is not None:
-        out.append(f"Result: {suptitle}")
+        out.append(f"Result: {result}")
 
     if content is not None:
         out.append(content)
