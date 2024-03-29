@@ -2,7 +2,6 @@ from os import path
 
 from modules.date import Date, format_range
 from modules.db import get_cursor
-from modules.entity import Entity
 from modules.latex_blocks import timeline, timeline_content
 from modules.location import Location
 
